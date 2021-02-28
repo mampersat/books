@@ -38,7 +38,12 @@ values = []
 line_number = 1
 
 for line in lines:
-    # might need skipping logic in here
+    line_number += 1
+
+    # 2020-02-28 4:10pm - processed 599, hit req/day limit
+    if line_number < 599:
+        print(f'skipping {line_number}')
+        continue
 
     stripped = line.strip()
     name_only = stripped.split('.')[0]
@@ -47,7 +52,6 @@ for line in lines:
     
     values.append([stripped, title, rating])
 
-    line_number += 1
     range = f'A{line_number}'
 
     if not (line_number % 10):

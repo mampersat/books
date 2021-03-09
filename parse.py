@@ -41,7 +41,7 @@ for line in lines:
     line_number += 1
 
     # 2020-02-28 4:10pm - processed 599, hit req/day limit
-    if line_number < 599:
+    if line_number < 2501:
         print(f'skipping {line_number}')
         continue
 
